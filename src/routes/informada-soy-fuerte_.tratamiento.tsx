@@ -56,14 +56,22 @@ const CARDS = [
     type: "Video",
     icon: iconVideo,
     img: card4,
+<<<<<<< HEAD
     ytId: "f1CBonLWVNM",
+=======
+    vimeoId: "1191295067",
+>>>>>>> 2cd7c657978e4915ff4086e40db8aaf03d0fa01d
   },
   {
     title: "Tratamiento para cáncer de mama sensible a hormonas",
     type: "Video",
     icon: iconVideo,
     img: card5,
+<<<<<<< HEAD
     ytId: "UUgs3z8NIjs",
+=======
+    vimeoId: "1191295067",
+>>>>>>> 2cd7c657978e4915ff4086e40db8aaf03d0fa01d
   },
   {
     title: "Informada soy más fuerte",
