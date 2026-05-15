@@ -1,0 +1,160 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* MILC Brand colors */
+  --color-milc-pink: var(--milc-pink);
+  --color-milc-pink-soft: var(--milc-pink-soft);
+  --color-milc-purple: var(--milc-purple);
+  --color-milc-teal: var(--milc-teal);
+  --color-milc-orange: var(--milc-orange);
+  --color-milc-dark: var(--milc-dark);
+  --color-milc-gray: var(--milc-gray);
+  --color-milc-whatsapp: var(--milc-whatsapp);
+
+  --font-sans: "Mulish", "Helvetica Neue", system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Helvetica Neue", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.25 0.02 280);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.25 0.02 280);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.25 0.02 280);
+  --primary: oklch(0.65 0.24 0);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.96 0.01 320);
+  --secondary-foreground: oklch(0.3 0.02 280);
+  --muted: oklch(0.97 0.005 280);
+  --muted-foreground: oklch(0.5 0.02 280);
+  --accent: oklch(0.95 0.03 340);
+  --accent-foreground: oklch(0.3 0.02 280);
+  --destructive: oklch(0.6 0.24 27);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.93 0.01 280);
+  --input: oklch(0.93 0.01 280);
+  --ring: oklch(0.65 0.24 0);
+
+  /* MILC palette — official brand hex values */
+  --milc-pink: #ef5390;          /* pink typography */
+  --milc-pink-strip: #EF538F;    /* pink section background ("Nosotros te acompañamos") */
+  --milc-pink-soft: #FCE4EC;     /* very soft pink bg */
+  --milc-purple: #7B54A3;        /* brand purple */
+  --milc-purple-soft: #CDBDE1;   /* soft purple for hover buttons */
+  --milc-teal: #7FC9AC;          /* aqua footer */
+  --milc-orange: #F59E0B;        /* warm orange */
+  --milc-dark: #595959;          /* gray typography */
+  --milc-gray: #595959;
+  --milc-soft-bg: #DEDEDF;       /* very light gray section bg */
+  --milc-whatsapp: #25D366;
+
+  --gradient-bar: linear-gradient(90deg,
+    var(--milc-pink) 0%, var(--milc-pink) 25%,
+    var(--milc-purple) 25%, var(--milc-purple) 50%,
+    var(--milc-teal) 50%, var(--milc-teal) 75%,
+    var(--milc-orange) 75%, var(--milc-orange) 100%);
+}
+
+.dark {
+  --background: oklch(0.15 0.02 280);
+  --foreground: oklch(0.98 0.005 280);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.01em; }
+}
+
+@layer utilities {
+  .text-milc-pink { color: var(--milc-pink); }
+  .bg-milc-pink { background-color: var(--milc-pink); }
+  .bg-milc-pink-soft { background-color: var(--milc-pink-soft); }
+  .text-milc-purple { color: var(--milc-purple); }
+  .bg-milc-purple { background-color: var(--milc-purple); }
+  .text-milc-dark { color: var(--milc-dark); }
+  .bg-milc-whatsapp { background-color: var(--milc-whatsapp); }
+
+  .gradient-bar {
+    background: var(--gradient-bar);
+    height: 6px;
+    width: 120px;
+    border-radius: 999px;
+  }
+
+  .btn-pink {
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold text-white transition-all;
+    background-color: var(--milc-pink);
+    box-shadow: 0 8px 24px -8px color-mix(in oklab, var(--milc-pink) 60%, transparent);
+  }
+  .btn-pink:hover { transform: translateY(-2px); filter: brightness(1.05); }
+
+  .btn-pink-outline {
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold transition-all border-2;
+    color: var(--milc-pink);
+    border-color: var(--milc-pink);
+    background: transparent;
+  }
+  .btn-pink-outline:hover { background-color: var(--milc-pink); color: white; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .heading-xl {
+    font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+    line-height: 1.05;
+    font-weight: 700;
+  }
+  .heading-lg {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    line-height: 1.15;
+    font-weight: 700;
+  }
+
+  .container-milc {
+    @apply max-w-6xl mx-auto px-5 md:px-8;
+  }
+}
