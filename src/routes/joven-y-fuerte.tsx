@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import wixImg1 from "@/assets/external/wix_eeb6b13650bc.jpg";
+import wixImg2 from "@/assets/external/wix_0f08a3f39402.png";
 
 export const Route = createFileRoute("/joven-y-fuerte")({
   head: () => ({
@@ -10,9 +12,8 @@ export const Route = createFileRoute("/joven-y-fuerte")({
   component: Page,
 });
 
-const W = "https://static.wixstatic.com/media/";
-const HERO = `${W}d3bdf4_7b9241a26d5743bc8f5ce5371e54c8d7~mv2.jpg/v1/fill/w_1905,h_700,al_t,q_85,enc_avif,quality_auto/d3bdf4_7b9241a26d5743bc8f5ce5371e54c8d7~mv2.jpg`;
-const LOGO_WHITE = `${W}d3bdf4_c624b7ffc4f4451181b8ac9529fdc8a5~mv2.png/v1/fill/w_403,h_249,al_c,q_85,enc_avif,quality_auto/Joven-y-Fuerte_White.png`;
+const HERO = wixImg1;
+const LOGO_WHITE = wixImg2;
 
 const ACERCA = [
   { label: "Diagnóstico", to: "/joven-y-fuerte/diagnostico" },

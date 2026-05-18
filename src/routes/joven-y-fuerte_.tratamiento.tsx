@@ -29,11 +29,14 @@ function Page() {
       <JovenSubnav />
 
       {/* Hero with background image */}
-      <section
-        className="relative bg-[#f4f4f5] bg-no-repeat bg-cover bg-right"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      >
-        <div className="mx-auto max-w-[1400px] px-4 py-16 md:py-24">
+      <section className="relative bg-[#f4f4f5]">
+        <div
+          className="hidden md:block absolute inset-0 bg-no-repeat bg-cover bg-right"
+          style={{ backgroundImage: `url(${heroBg})` }}
+          aria-hidden
+        />
+        <img src={heroBg} alt="" className="block md:hidden w-full h-auto object-cover" />
+        <div className="relative mx-auto max-w-[1400px] px-4 py-10 md:py-24">
           <div className="max-w-xl reveal">
             <p className="text-2xl md:text-3xl font-bold text-milc-gray">
               Detección oportuna

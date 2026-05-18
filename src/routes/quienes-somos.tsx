@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { A } from "@/lib/milc-assets";
+import wixImg1 from "@/assets/external/wix_32b5d1db422b.jpg";
 
 export const Route = createFileRoute("/quienes-somos")({
   head: () => ({
@@ -126,7 +127,7 @@ function Page() {
         <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <article className="reveal rounded-2xl overflow-hidden bg-white shadow-sm">
             <img
-              src="https://static.wixstatic.com/media/f9a478_e5e35f81ed7741ef934708ac27661dea~mv2.jpeg/v1/fill/w_640,h_420,al_c,q_85,enc_avif,quality_auto/WhatsApp%20Image%202022-10-18%20at%201_27_00%20PM.jpeg"
+              src={wixImg1}
               alt="Comunicado de prensa #DetecciónMásAcción"
               className="w-full aspect-[4/3] object-cover"
             />

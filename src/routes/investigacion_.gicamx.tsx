@@ -166,13 +166,16 @@ function Page() {
   return (
     <div className="bg-white">
       {/* Hero banner */}
-      <section
-        className="relative bg-no-repeat bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      >
-        <div className="absolute inset-0 bg-black/30" />
-        <div className="relative mx-auto max-w-[1400px] px-4 py-40 md:py-56 flex items-center justify-center">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-white drop-shadow-lg text-center">
+      <section className="relative">
+        <div
+          className="hidden md:block absolute inset-0 bg-no-repeat bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroBg})` }}
+          aria-hidden
+        />
+        <div className="hidden md:block absolute inset-0 bg-black/30" aria-hidden />
+        <img src={heroBg} alt="" className="block md:hidden w-full h-auto object-cover" />
+        <div className="relative mx-auto max-w-[1400px] px-4 py-12 md:py-56 flex items-center justify-center bg-milc-purple md:bg-transparent">
+          <h1 className="text-4xl md:text-7xl font-extrabold text-white drop-shadow-lg text-center">
             GICAMx
           </h1>
         </div>
